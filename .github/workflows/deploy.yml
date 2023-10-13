@@ -37,5 +37,5 @@ jobs:
             sudo git pull # we pull any changes from git
             sudo npm install # we install any missing dependencies
             sudo npm run build # we build our app
-            cp ./dist ./opt/web 
+            cp /dist/* /opt/web 
             sudo pm2 reload all # we reload the app via PM2
