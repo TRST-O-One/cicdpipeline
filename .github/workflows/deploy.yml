@@ -24,6 +24,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: test # this job depends on "test" having finished
+     if: github.ref == 'refs/heads/main' # we tell Github to only execute this step if we're on our master branch (so we don't put unfinished branches in production)
     steps:
       - name: Deploying to Ubuntu Server
         uses: appleboy/ssh-action@master # An action made to control Linux servers
@@ -36,6 +37,6 @@ jobs:
             cd cicdpipeline # we move into our app's folder
             sudo git pull # we pull any changes from git
             sudo npm install # we install any missing dependencies
-            sudo npm run build # we build our app
-            cp -r dist /opt/web 
+            sudo npm build # we build our app
+            cp -r dist/demo /opt/web 
             sudo pm2 reload all # we reload the app via PM2
