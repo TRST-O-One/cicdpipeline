@@ -35,6 +35,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd cicdpipeline # we move into our app's folder
+            sudo rm -r dist
             sudo git pull # we pull any changes from git
             sudo npm install # we install any missing dependencies
             sudo ng build # we build our app
