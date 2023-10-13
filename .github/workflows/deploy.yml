@@ -39,4 +39,4 @@ jobs:
             sudo npm install # we install any missing dependencies
             sudo npm build # we build our app
             cp -r dist/demo /opt/web 
-            sudo pm2 reload all # we reload the app via PM2
+            sudo systemctl restart nginx
