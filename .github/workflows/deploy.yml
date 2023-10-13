@@ -37,6 +37,6 @@ jobs:
             cd cicdpipeline # we move into our app's folder
             sudo git pull # we pull any changes from git
             sudo npm install # we install any missing dependencies
-            sudo npm build # we build our app
+            sudo ng build # we build our app
             cp -r dist/demo /opt/web 
             sudo systemctl restart nginx
