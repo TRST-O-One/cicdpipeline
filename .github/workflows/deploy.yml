@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd path-to-your-angular-app/cicdpipeline # we move into our app's folder
+            cd cicdpipeline # we move into our app's folder
             sudo git pull # we pull any changes from git
             sudo npm prune # we remove any unused dependencies
             sudo npm install # we install any missing dependencies
